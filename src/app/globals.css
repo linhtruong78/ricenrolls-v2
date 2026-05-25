@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand — Yellow */
+  --color-y-400: #ffe566;
+  --color-y-500: #ffd93d;
+  --color-y-600: #f0c419;
+  --color-y-100: #fff9d6;
+  --color-y-200: #fff3b0;
+
+  /* Brand — Orange */
+  --color-o-400: #ff8c5a;
+  --color-o-500: #ff6b35;
+  --color-o-600: #e8521a;
+  --color-o-100: #ffe8df;
+
+  /* Neutrals */
+  --color-ink:    #1a1a1a;
+  --color-body:   #2d2d2d;
+  --color-muted:  #7a7a7a;
+  --color-warm:   #fffdf5;
+  --color-border: #fff3b0;
+
+  /* Dietary tags */
+  --color-tag-vegan: #4caf50;
+  --color-tag-spicy: #e63946;
+  --color-tag-gf:    #4cc9f0;
+
+  /* Fonts */
+  --font-heading: var(--font-fredoka);
+  --font-body:    var(--font-nunito);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #ffffff;
+  color: #2d2d2d;
+  font-family: var(--font-nunito), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-fredoka), system-ui, sans-serif;
+}
+
+/* ── Comic-card utilities ─────────────────────────── */
+.comic-card {
+  border: 2px solid #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0px 0px #1a1a1a;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.comic-card:hover {
+  box-shadow: 6px 6px 0px 0px #1a1a1a;
+  transform: translate(-2px, -2px);
+}
+.comic-card-sm {
+  border: 2px solid #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0px 0px #1a1a1a;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.comic-card-sm:hover {
+  box-shadow: 5px 5px 0px 0px #1a1a1a;
+  transform: translate(-2px, -2px);
+}
+
+/* ── Comic button ─────────────────────────────────── */
+.comic-btn {
+  border: 2px solid #1a1a1a;
+  box-shadow: 3px 3px 0px 0px #1a1a1a;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+}
+.comic-btn:hover {
+  box-shadow: 5px 5px 0px 0px #1a1a1a;
+  transform: translate(-2px, -2px);
+}
+.comic-btn:active {
+  box-shadow: 1px 1px 0px 0px #1a1a1a;
+  transform: translate(2px, 2px);
+}
+
+/* ── Sticker badge ────────────────────────────────── */
+.sticker {
+  border: 2px solid #1a1a1a;
+  box-shadow: 2px 2px 0px 0px #1a1a1a;
+  display: inline-block;
+}
+
+/* ── Wavy divider ─────────────────────────────────── */
+.wave-divider { line-height: 0; display: block; }
+
+/* ── Scrollbar hide ───────────────────────────────── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
