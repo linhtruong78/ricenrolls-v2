@@ -14,7 +14,7 @@ export default function LunchStrip() {
               </div>
             </div>
             <div className="flex gap-3">
-              <a href="/menu#lunch"
+              <a href="/menu"
                 className="comic-btn bg-y-500 text-ink font-heading font-600 px-6 py-2.5 rounded-full hover:bg-y-400 transition-colors">
                 See Lunch Menu
               </a>

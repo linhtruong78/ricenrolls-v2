@@ -24,7 +24,7 @@ export default function HeroSection() {
           <div className="py-8 lg:py-12">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-y-100 border-2 border-ink sticker rounded-full px-4 py-1.5 text-sm font-body font-700 text-ink mb-5 rotate-[-1deg]">
-              🍱 Korean Food · Dundas, ON
+              🍱 Korean Food · Hamilton, ON
             </div>
 
             {/* Heading */}
@@ -40,7 +40,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="font-body text-muted text-lg mb-8 max-w-md leading-relaxed">
-              Handcrafted gimbap, rice bowls & signature Korean dishes — made fresh daily in Dundas. Quick, tasty & easy to order!
+              Handcrafted gimbap, rice bowls & signature Korean dishes — made fresh daily in Hamilton. Quick, tasty & easy to order!
             </p>
 
             {/* CTAs */}

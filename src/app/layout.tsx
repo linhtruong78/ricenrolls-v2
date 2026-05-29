@@ -21,22 +21,22 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ricenrolls.ca"),
-  title: { default: "Rice N Rolls | Korean Food in Dundas, ON 🍱", template: "%s | Rice N Rolls" },
-  description: "Fresh Korean-inspired gimbap, bibimbap, K-pop chicken and more in Dundas, Ontario. Great food, great prices — order online for pickup or delivery!",
-  keywords: "Korean food Dundas, gimbap Hamilton, Korean catering Ontario, bibimbap, K-pop chicken, student food Dundas",
+  title: { default: "Rice N Rolls | Korean Food in Hamilton, ON 🍱", template: "%s | Rice N Rolls" },
+  description: "Fresh Korean-inspired gimbap, bibimbap, K-pop chicken and more in Hamilton, Ontario. Great food, great prices — order online for pickup or delivery!",
+  keywords: "Korean food Hamilton, gimbap Hamilton, Korean catering Ontario, bibimbap, K-pop chicken, student food Hamilton",
   alternates: { canonical: "https://www.ricenrolls.ca" },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
-    title: "Rice N Rolls | Korean Food in Dundas, ON 🍱",
-    description: "Fresh Korean-inspired food in Dundas. Order online for pickup or delivery!",
+    title: "Rice N Rolls | Korean Food in Hamilton, ON 🍱",
+    description: "Fresh Korean-inspired food in Hamilton. Order online for pickup or delivery!",
     type: "website", locale: "en_CA", siteName: "Rice N Rolls", url: "https://www.ricenrolls.ca",
   },
-  twitter: { card: "summary_large_image", title: "Rice N Rolls | Korean Food in Dundas, ON 🍱", description: "Fresh Korean rolls, bowls & more. Order now!" },
+  twitter: { card: "summary_large_image", title: "Rice N Rolls | Korean Food in Hamilton, ON 🍱", description: "Fresh Korean rolls, bowls & more. Order now!" },
 };
 
 const schema = {
   "@context": "https://schema.org", "@type": "Restaurant", name: "Rice N Rolls",
-  address: { "@type": "PostalAddress", streetAddress: "#3 2 Castlewood Blvd", addressLocality: "Dundas", addressRegion: "ON", postalCode: "L9H 7M8", addressCountry: "CA" },
+  address: { "@type": "PostalAddress", streetAddress: "#3 2 Castlewood Blvd", addressLocality: "Hamilton", addressRegion: "ON", postalCode: "L9H 7M8", addressCountry: "CA" },
   telephone: "+12892388868", email: "contact@ricenrolls.ca", url: "https://www.ricenrolls.ca",
   servesCuisine: ["Korean", "Asian Fusion"], priceRange: "$$",
   openingHoursSpecification: [

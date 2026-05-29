@@ -13,7 +13,7 @@ const tagLabel: Record<DietaryTag, string> = { vegan: "🌿 Vegan", gf: "🌾 GF
 type Filter = DietaryTag | "all";
 
 export default function MenuClient() {
-  const [cat, setCat] = useState("appetizers");
+  const [cat, setCat] = useState("lunch-special");
   const [filter, setFilter] = useState<Filter>("all");
 
   // Drag-to-scroll for category tabs on mouse devices
@@ -129,20 +129,28 @@ export default function MenuClient() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map(item => (
             <div key={item.name} className={`comic-card-sm bg-white flex flex-col relative ${item.comingSoon ? "opacity-60" : ""}`}>
-              {/* Yellow top bar */}
-              <div className="h-1.5 bg-y-500 rounded-t-[10px]" />
-              <div className="p-4 flex flex-col flex-1">
-                <div className="flex items-start gap-3 mb-2">
-                  <span className="text-3xl flex-shrink-0">{item.emoji}</span>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-1">
-                      <h3 className="font-heading font-600 text-base text-ink leading-snug">{item.name}</h3>
-                      <span className="font-heading font-700 text-o-500 text-base flex-shrink-0 ml-1">{item.price}</span>
-                    </div>
+              {/* Food image */}
+              {item.image ? (
+                <div className="h-36 px-3 pt-3">
+                  <div className="w-full h-full rounded-xl overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-                <p className="font-body text-muted text-xs leading-relaxed flex-1 mb-3">{item.description}</p>
-                <div className="flex flex-wrap gap-1.5 mt-auto">
+              ) : (
+                <div className="h-1.5 bg-y-500 rounded-t-[10px]" />
+              )}
+
+              <div className="px-3 pb-3 pt-1 flex flex-col flex-1">
+                <div className="flex items-start justify-between gap-1 mb-0.5">
+                  <h3 className="font-heading font-600 text-sm text-ink leading-snug">{item.name}</h3>
+                  <span className="font-heading font-700 text-o-500 text-sm flex-shrink-0 ml-1">{item.price}</span>
+                </div>
+                <p className="font-body text-muted text-xs leading-relaxed flex-1 mb-2">{item.description}</p>
+                <div className="flex flex-wrap gap-1 mt-auto">
                   {item.badge && (
                     <span className="sticker bg-y-500 text-ink text-xs font-heading font-600 px-2 py-0.5 rounded-full rotate-[-1deg]">{item.badge}</span>
                   )}

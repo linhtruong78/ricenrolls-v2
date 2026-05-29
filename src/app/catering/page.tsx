@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Users, Check, Phone, Mail, Send } from "lucide-react";
-export const metadata: Metadata = { title: "Catering", description: "Korean-inspired catering for events in the Hamilton-Dundas area. Fresh platters and custom orders." };
+export const metadata: Metadata = { title: "Catering", description: "Korean-inspired catering for events in the Hamilton area. Fresh platters and custom orders." };
 
 const packages = [
   { emoji:"🎄", name:"Holiday Special Platter", serves:"8–10 people", price:"$125", hot:false, items:["63 pc rolls (9 varieties)","Japchae noodles","K-pop chicken or crispy tofu","Edamame","Chicken dumplings (6 pcs)"] },

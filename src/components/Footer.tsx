@@ -15,7 +15,7 @@ export default function Footer() {
               <span className="text-2xl">🍱</span>
               <span className="font-heading font-bold text-xl">Rice N<span className="text-y-500"> Rolls</span></span>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed mb-4">Fresh Korean-inspired food made daily in Dundas, Ontario. Gimbap, bowls & more!</p>
+            <p className="text-white/60 text-sm leading-relaxed mb-4">Fresh Korean-inspired food made daily in Hamilton, Ontario. Gimbap, bowls & more!</p>
             <div className="flex gap-2">
               <a href="https://www.instagram.com/ricenrollsdundas" target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-y-500 hover:text-ink flex items-center justify-center transition-colors text-sm font-bold border border-white/20">
@@ -54,7 +54,7 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-600 text-y-500 mb-3">Visit Us</h4>
             <ul className="space-y-2 text-sm text-white/60 mb-4">
-              <li className="flex items-start gap-2"><MapPin size={14} className="mt-0.5 flex-shrink-0 text-y-400"/><span>#3 2 Castlewood Blvd, Dundas ON L9H 7M8</span></li>
+              <li className="flex items-start gap-2"><MapPin size={14} className="mt-0.5 flex-shrink-0 text-y-400"/><span>#3 2 Castlewood Blvd, Hamilton, ON L9H 7M8</span></li>
               <li className="flex items-center gap-2"><Phone size={14} className="text-y-400"/><a href="tel:+12892388868" className="hover:text-y-500 transition-colors">(289) 238-8868</a></li>
               <li className="flex items-center gap-2"><Mail size={14} className="text-y-400"/><a href="mailto:contact@ricenrolls.ca" className="hover:text-y-500 transition-colors">contact@ricenrolls.ca</a></li>
             </ul>
@@ -67,7 +67,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/30">
           <p>© {new Date().getFullYear()} Rice N Rolls. All rights reserved.</p>
-          <p>#3 2 Castlewood Blvd, Dundas, ON · (289) 238-8868</p>
+          <p>#3 2 Castlewood Blvd, Hamilton, ON · (289) 238-8868</p>
         </div>
       </div>
     </footer>
