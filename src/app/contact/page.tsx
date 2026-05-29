@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import ContactForm from "@/components/contact/ContactForm";
 export const metadata: Metadata = { title: "Contact", description: "Find Rice N Rolls in Hamilton, ON. Address, hours, phone number, and contact form." };
 
 const hours = [
@@ -47,24 +48,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div className="comic-card bg-white p-7">
-            <h2 className="font-heading font-700 text-2xl text-ink mb-2">Send a Message 💌</h2>
-            <p className="font-body text-muted text-sm mb-6">We reply within one business day.</p>
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <div><label className="block text-xs font-heading font-600 text-ink mb-1 uppercase">Name *</label><input type="text" required placeholder="Your name" className="w-full px-3 py-2.5 rounded-xl border-2 border-ink text-sm font-body focus:outline-none focus:border-o-500 bg-warm"/></div>
-                <div><label className="block text-xs font-heading font-600 text-ink mb-1 uppercase">Email *</label><input type="email" required placeholder="you@email.com" className="w-full px-3 py-2.5 rounded-xl border-2 border-ink text-sm font-body focus:outline-none focus:border-o-500 bg-warm"/></div>
-              </div>
-              <div><label className="block text-xs font-heading font-600 text-ink mb-1 uppercase">Topic</label>
-                <select className="w-full px-3 py-2.5 rounded-xl border-2 border-ink text-sm font-body focus:outline-none focus:border-o-500 bg-warm">
-                  <option value="">Select a topic</option>
-                  {["General Inquiry","Catering Request","Feedback","Allergy Question","Other"].map(t=><option key={t}>{t}</option>)}
-                </select>
-              </div>
-              <div><label className="block text-xs font-heading font-600 text-ink mb-1 uppercase">Message *</label><textarea required rows={5} placeholder="How can we help?" className="w-full px-3 py-2.5 rounded-xl border-2 border-ink text-sm font-body focus:outline-none focus:border-o-500 bg-warm resize-none"/></div>
-              <button type="submit" className="comic-btn w-full flex items-center justify-center gap-2 bg-o-500 hover:bg-o-600 text-white font-heading font-600 py-3.5 rounded-full"><Send size={16}/>Send Message 💌</button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </section>
     </div>

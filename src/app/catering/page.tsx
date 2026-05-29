@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Users, Check, Phone, Mail, Send } from "lucide-react";
+import { Users, Check, Phone, Mail } from "lucide-react";
+import CateringForm from "@/components/catering/CateringForm";
 export const metadata: Metadata = { title: "Catering", description: "Korean-inspired catering for events in the Hamilton area. Fresh platters and custom orders." };
 
 const packages = [
@@ -61,25 +62,7 @@ export default function CateringPage() {
               <div className="flex items-center gap-3"><div className="w-9 h-9 comic-card-sm bg-y-500 flex items-center justify-center flex-shrink-0"><Mail size={15}/></div><a href="mailto:contact@ricenrolls.ca" className="font-700 text-ink hover:text-o-500 transition-colors">contact@ricenrolls.ca</a></div>
             </div>
           </div>
-          <div className="comic-card bg-white p-7">
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <div><label className="block text-xs font-heading font-600 text-ink mb-1 uppercase">Name *</label><input type="text" required placeholder="Your name" className="w-full px-3 py-2.5 rounded-xl border-2 border-ink text-sm font-body focus:outline-none focus:border-o-500 bg-warm"/></div>
-                <div><label className="block text-xs font-heading font-600 text-ink mb-1 uppercase">Email *</label><input type="email" required placeholder="you@email.com" className="w-full px-3 py-2.5 rounded-xl border-2 border-ink text-sm font-body focus:outline-none focus:border-o-500 bg-warm"/></div>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div><label className="block text-xs font-heading font-600 text-ink mb-1 uppercase">Event Date *</label><input type="date" required className="w-full px-3 py-2.5 rounded-xl border-2 border-ink text-sm font-body focus:outline-none focus:border-o-500 bg-warm"/></div>
-                <div><label className="block text-xs font-heading font-600 text-ink mb-1 uppercase">Group Size *</label>
-                  <select required className="w-full px-3 py-2.5 rounded-xl border-2 border-ink text-sm font-body focus:outline-none focus:border-o-500 bg-warm">
-                    <option value="">Select</option>
-                    {["2–4","5–10","11–20","21–50","50+"].map(s=><option key={s}>{s} people</option>)}
-                  </select>
-                </div>
-              </div>
-              <div><label className="block text-xs font-heading font-600 text-ink mb-1 uppercase">Message</label><textarea rows={4} placeholder="Tell us about your event, dietary needs, preferred packages..." className="w-full px-3 py-2.5 rounded-xl border-2 border-ink text-sm font-body focus:outline-none focus:border-o-500 bg-warm resize-none"/></div>
-              <button type="submit" className="comic-btn w-full flex items-center justify-center gap-2 bg-o-500 hover:bg-o-600 text-white font-heading font-600 py-3.5 rounded-full"><Send size={16}/>Send Request 🎉</button>
-            </form>
-          </div>
+          <CateringForm />
         </div>
       </div>
     </div>
