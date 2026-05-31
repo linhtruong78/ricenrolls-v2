@@ -13,7 +13,7 @@ const tagLabel: Record<DietaryTag, string> = { vegan: "🌿 Vegan", gf: "🌾 GF
 type Filter = DietaryTag | "all";
 
 export default function MenuClient() {
-  const [cat, setCat] = useState("lunch-special");
+  const [cat, setCat] = useState("rice-bowl");
   const [filter, setFilter] = useState<Filter>("all");
 
   // Drag-to-scroll for category tabs on mouse devices
@@ -54,7 +54,8 @@ export default function MenuClient() {
   }
 
   const current = menuCategories.find(c => c.id === cat)!;
-  const items = filter === "all" ? current.items : current.items.filter(i => i.tags.includes(filter as DietaryTag));
+  const visibleItems = current.items.filter(i => !i.hidden);
+  const items = filter === "all" ? visibleItems : visibleItems.filter(i => i.tags.includes(filter as DietaryTag));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
