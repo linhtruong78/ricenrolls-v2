@@ -132,14 +132,12 @@ export default function MenuClient() {
             <div key={item.name} className={`comic-card-sm bg-white flex flex-col relative ${item.comingSoon ? "opacity-60" : ""}`}>
               {/* Food image */}
               {item.image ? (
-                <div className="h-36 px-3 pt-3">
-                  <div className="w-full h-full rounded-xl overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                <div className="rounded-t-[10px] overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
               ) : (
                 <div className="h-1.5 bg-y-500 rounded-t-[10px]" />

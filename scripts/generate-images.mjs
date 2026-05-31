@@ -8,6 +8,18 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 
+// Load .env.local if OPENAI_API_KEY not already set
+if (!process.env.OPENAI_API_KEY) {
+  const envPath = path.join(__dirname, "..", ".env.local");
+  if (fs.existsSync(envPath)) {
+    const lines = fs.readFileSync(envPath, "utf8").split("\n");
+    for (const line of lines) {
+      const match = line.match(/^([^=]+)=(.+)$/);
+      if (match) process.env[match[1].trim()] = match[2].trim();
+    }
+  }
+}
+
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // ── Helper: download image from URL ──────────────────────────────────────────
@@ -23,12 +35,12 @@ function downloadImage(url, destPath) {
 }
 
 // ── Generate one image ────────────────────────────────────────────────────────
-async function generate(prompt, filename, category) {
+async function generate(prompt, filename, category, { force = false, quality = "medium" } = {}) {
   const dir = path.join(ROOT, "public", "images", "menu", category);
   fs.mkdirSync(dir, { recursive: true });
   const destPath = path.join(dir, filename);
 
-  if (fs.existsSync(destPath)) {
+  if (fs.existsSync(destPath) && !force) {
     console.log(`  ⏭  Already exists: ${filename}`);
     return;
   }
@@ -40,7 +52,7 @@ async function generate(prompt, filename, category) {
       prompt,
       n: 1,
       size: "1024x1024",
-      quality: "medium",
+      quality,
     });
     // gpt-image-1 returns b64_json
     const b64 = response.data[0].b64_json;
@@ -55,12 +67,25 @@ async function generate(prompt, filename, category) {
   }
 }
 
-// ── Food photo prompt builder ─────────────────────────────────────────────────
+// ── Food photo prompt builders ────────────────────────────────────────────────
 function foodPrompt(dish, ingredients) {
   return `Professional restaurant food photography of ${dish}. Ingredients: ${ingredients}. ` +
     `Shot on a clean white background, soft natural studio lighting, ` +
     `slight top-down angle, plated beautifully, vibrant colours, crispy textures visible, ` +
     `ultra-realistic, appetizing, high resolution, no text, no watermark.`;
+}
+
+// Highly realistic gimbap prompt — 7 pieces on white plate
+function gimbapPrompt(fillings, extraStyle = "") {
+  return `Photorealistic food photograph of Korean gimbap. ` +
+    `One gimbap roll sliced into exactly 7 equal round pieces arranged in a straight neat row on a clean white ceramic plate. ` +
+    `Each piece clearly shows the cross-section: outer dark green nori seaweed wrapper, thin white sushi rice layer, ` +
+    `and ${fillings} packed tightly in the centre. ` +
+    `Shot on a pure white background. Soft studio lighting from the upper-left casting a gentle shadow. ` +
+    `Canon EOS R5, 85mm lens, f/2.8, shallow depth of field, sharp focus on the front pieces. ` +
+    `Realistic rice grain texture, glossy nori surface, vibrant natural colours. ` +
+    `${extraStyle} ` +
+    `Restaurant menu quality. No text, no watermark, no watercolour, no cartoon, no illustration, no 3D render.`;
 }
 
 // ── MENU ITEMS by category ────────────────────────────────────────────────────
@@ -87,18 +112,19 @@ const ITEMS = {
   ],
 
   "gimbap": [
-    { file: "original-gimbap.png",       prompt: foodPrompt("Korean original gimbap rolls sliced", "8-10 sliced gimbap pieces showing carrot, crab meat, ham, egg, cucumber, pickled daikon inside, arranged on a plate") },
-    { file: "vegan-gimbap.png",          prompt: foodPrompt("Korean vegan gimbap rolls sliced", "colourful vegan gimbap slices showing carrot, cucumber, red cabbage, red sweet pepper, arranged neatly") },
-    { file: "california-roll.png",       prompt: foodPrompt("Korean California roll gimbap sliced", "sliced California rolls showing avocado, cucumber, crab meat, carrot, drizzled with spicy mayo") },
-    { file: "crispy-veggie-roll.png",    prompt: foodPrompt("Korean crispy vegetable gimbap roll sliced", "sliced crispy veggie rolls showing crunchy onion, carrot, red pepper, yam, cucumber inside") },
-    { file: "yam-avo-roll.png",          prompt: foodPrompt("Korean yam avocado gimbap roll sliced", "sliced gimbap rolls showing crispy yam, red sweet pepper, creamy avocado inside") },
-    { file: "kspicy-chicken-gimbap.png", prompt: foodPrompt("Korean spicy chicken gimbap roll sliced", "sliced spicy chicken gimbap showing K-spicy chicken, carrot, lettuce, cabbage, red sauce visible") },
-    { file: "beef-bulgogi-gimbap.png",   prompt: foodPrompt("Korean beef bulgogi gimbap roll sliced", "sliced gimbap rolls showing marinated beef bulgogi, carrot, lettuce inside, sesame seeds on top") },
-    { file: "crispy-chicken-gimbap.png", prompt: foodPrompt("Korean crispy chicken gimbap roll sliced", "sliced gimbap showing crispy chicken tender, sweet red pepper, cucumber, teriyaki mayo drizzle") },
-    { file: "tuna-gimbap.png",           prompt: foodPrompt("Korean tuna gimbap roll sliced", "sliced tuna gimbap showing tuna, carrot, cucumber, egg, lettuce, crab meat, spicy mayo inside") },
-    { file: "yam-roll.png",              prompt: foodPrompt("Korean crispy yam gimbap mini rolls", "6 small crispy yam gimbap rolls sliced, golden yam visible inside, arranged on a plate") },
-    { file: "avocado-roll.png",          prompt: foodPrompt("Korean avocado gimbap mini rolls", "6 small avocado gimbap rolls sliced, creamy green avocado visible inside, neatly arranged") },
-    { file: "fried-tofu-rice.png",       prompt: foodPrompt("Korean fried tofu stuffed rice yubuchobap", "3 pieces inari-style fried tofu pockets stuffed with seasoned rice and carrots, golden tofu skin") },
+    { file: "original-gimbap.png",       quality: "high", prompt: gimbapPrompt("orange carrot strips, pink crab stick, sliced yellow egg omelette, green cucumber, yellow pickled daikon (danmuji), and pink ham in the centre") },
+    { file: "vegan-gimbap.png",          quality: "high", prompt: gimbapPrompt("purple red cabbage, orange carrot strips, dark green cucumber, bright red sweet pepper strips, and a drizzle of white vegan mayo", "Vegan, no meat, no egg.") },
+    { file: "california-roll.png",       quality: "high", prompt: gimbapPrompt("creamy green avocado slices, green cucumber, pink crab stick, orange carrot, and a drizzle of orange-red spicy mayo on top of each piece", "Slightly moist glistening surface.") },
+    { file: "crispy-veggie-roll.png",    quality: "high", prompt: gimbapPrompt("crispy golden-fried onion, orange carrot, red sweet pepper strips, golden crispy yam, and green cucumber", "Crunchy golden textures visible.") },
+    { file: "yam-avo-roll.png",          quality: "high", prompt: gimbapPrompt("golden crispy yam strip, bright red sweet pepper, and creamy dark-green avocado slices", "Rich green and golden contrast.") },
+    { file: "kspicy-chicken-gimbap.png", quality: "high", prompt: gimbapPrompt("shredded spicy red-sauced chicken, orange carrot strips, green lettuce, and purple cabbage with red gochujang sauce visible", "Red spicy gloss on the chicken.") },
+    { file: "beef-bulgogi-gimbap.png",   quality: "high", prompt: gimbapPrompt("thin dark-brown marinated beef bulgogi slices, orange carrot strips, and fresh green lettuce", "A few white sesame seeds sprinkled on top. Slightly caramelised beef texture.") },
+    { file: "crispy-chicken-gimbap.png", quality: "high", prompt: gimbapPrompt("golden crispy breaded chicken tender strip, red sweet pepper, green cucumber, and a drizzle of creamy teriyaki mayo", "Crunchy golden-brown chicken texture visible.") },
+    { file: "tuna-gimbap.png",           quality: "high", prompt: gimbapPrompt("seasoned tuna filling, orange carrot, green cucumber, yellow egg strip, green lettuce, and pink crab meat with a touch of spicy mayo", "Classic look.") },
+    { file: "yam-roll.png",              quality: "high", prompt: gimbapPrompt("golden crispy deep-fried yam strip filling only, minimal and clean", "Small compact roll. Crispy golden-yellow yam clearly visible.") },
+    { file: "avocado-roll.png",          quality: "high", prompt: gimbapPrompt("thick creamy ripe avocado slices only, bright green interior, minimal and clean", "Small compact roll. Rich green avocado filling clearly visible.") },
+    { file: "cucumber-roll.png",         quality: "high", prompt: gimbapPrompt("fresh cool cucumber strips only, bright green and crisp interior, minimal and clean", "Small compact roll. Fresh green cucumber visible.") },
+    { file: "fried-tofu-rice.png",       quality: "high", prompt: foodPrompt("Korean yubuchobap fried tofu stuffed rice balls", "3 golden-brown fried tofu pockets (inari-style) stuffed with seasoned white rice and orange carrot, arranged on a white plate, glossy golden tofu skin, appetizing, photorealistic") },
   ],
 
   "bibimbap": [
@@ -158,14 +184,19 @@ const ITEMS = {
 };
 
 // ── Run ───────────────────────────────────────────────────────────────────────
-const [,, categoryArg] = process.argv;
+// Usage: node scripts/generate-images.mjs [category] [--force]
+const args = process.argv.slice(2);
+const force = args.includes("--force");
+const categoryArg = args.find(a => !a.startsWith("--"));
 const categories = categoryArg ? [categoryArg] : Object.keys(ITEMS);
+
+if (force) console.log("⚡ Force mode ON — will overwrite existing files.");
 
 for (const cat of categories) {
   if (!ITEMS[cat]) { console.log(`Unknown category: ${cat}`); continue; }
   console.log(`\n📂 Category: ${cat} (${ITEMS[cat].length} images)`);
   for (const item of ITEMS[cat]) {
-    await generate(item.prompt, item.file, cat);
+    await generate(item.prompt, item.file, cat, { force, quality: item.quality || "medium" });
     // Small delay to avoid rate-limiting
     await new Promise(r => setTimeout(r, 1500));
   }
