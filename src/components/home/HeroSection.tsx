@@ -3,7 +3,7 @@ import { ShoppingBag, Bike } from "lucide-react";
 import WaveDivider from "@/components/WaveDivider";
 
 const ORDER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-dundas";
-const UBER_EATS_URL = "#"; // TODO: replace with real Uber Eats link
+const UBER_EATS_URL = "https://www.ubereats.com/ca/store/rice-n-rolls/kvPWml5jViCdO630ZKftzA";
 
 const floatingItems = [
   { emoji: "🌯", label: "Gimbap", bg: "#FFD93D", rot: "-rotate-3", top: "top-4", left: "left-0" },

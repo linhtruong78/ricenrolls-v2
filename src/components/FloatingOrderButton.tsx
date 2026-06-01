@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ShoppingBag, Bike } from "lucide-react";
 
 const CLOVER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-dundas";
-const UBER_EATS_URL = "#"; // TODO: replace with real Uber Eats link
+const UBER_EATS_URL = "https://www.ubereats.com/ca/store/rice-n-rolls/kvPWml5jViCdO630ZKftzA";
 
 export default function FloatingOrderButton() {
   const [visible, setVisible] = useState(false);

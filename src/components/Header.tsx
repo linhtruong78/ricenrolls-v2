@@ -6,7 +6,7 @@ import { Menu, X, ShoppingBag, Bike } from "lucide-react";
 import { getOpenStatus } from "@/lib/hours";
 
 const ORDER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-dundas";
-const UBER_EATS_URL = "#"; // TODO: replace with real Uber Eats link
+const UBER_EATS_URL = "https://www.ubereats.com/ca/store/rice-n-rolls/kvPWml5jViCdO630ZKftzA";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Menu", href: "/menu" },
