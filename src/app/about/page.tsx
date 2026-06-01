@@ -69,7 +69,7 @@ export default function AboutPage() {
         <h2 className="font-heading text-3xl font-700 text-ink mb-3">Come Say Hi! 👋</h2>
         <p className="font-body text-muted mb-7 max-w-md mx-auto">Stop by or order online — we&apos;re in Hamilton and ready to serve you something delicious!</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="https://www.clover.com/online-ordering/rice-n-rolls-dundas" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.clover.com/online-ordering/rice-n-rolls-hamilton" target="_blank" rel="noopener noreferrer"
             className="comic-btn bg-o-500 hover:bg-o-600 text-white font-heading font-600 px-8 py-3.5 rounded-full transition-colors">Order Online 🍱</a>
           <Link href="/contact" className="comic-btn bg-y-500 hover:bg-y-400 text-ink font-heading font-600 px-8 py-3.5 rounded-full transition-colors">Get Directions 📍</Link>
         </div>

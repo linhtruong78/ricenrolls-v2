@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { menuCategories, type DietaryTag } from "@/lib/menuData";
 
@@ -13,7 +14,10 @@ const tagLabel: Record<DietaryTag, string> = { vegan: "🌿 Vegan", gf: "🌾 GF
 type Filter = DietaryTag | "all";
 
 export default function MenuClient() {
-  const [cat, setCat] = useState("rice-bowl");
+  const searchParams = useSearchParams();
+  const initialCat = searchParams.get("cat") ?? "rice-bowl";
+  const validCat = menuCategories.find(c => c.id === initialCat) ? initialCat : "rice-bowl";
+  const [cat, setCat] = useState(validCat);
   const [filter, setFilter] = useState<Filter>("all");
 
   // Drag-to-scroll for category tabs on mouse devices
@@ -127,12 +131,12 @@ export default function MenuClient() {
       {items.length === 0 ? (
         <div className="text-center py-16"><p className="text-4xl mb-3">🔍</p><p className="font-body text-muted">No items match that filter here!</p></div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {items.map(item => (
-            <div key={item.name} className={`comic-card-sm bg-white flex flex-col relative ${item.comingSoon ? "opacity-60" : ""}`}>
-              {/* Food image */}
+            <div key={item.name} className={`comic-card-sm bg-white flex overflow-hidden relative h-[120px] ${item.comingSoon ? "opacity-60" : ""}`}>
+              {/* Food image — fixed width, auto-fills card height via flexbox stretch */}
               {item.image ? (
-                <div className="rounded-t-[10px] overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                <div className="w-24 sm:w-28 flex-shrink-0 overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -140,15 +144,16 @@ export default function MenuClient() {
                   />
                 </div>
               ) : (
-                <div className="h-1.5 bg-y-500 rounded-t-[10px]" />
+                <div className="w-1.5 flex-shrink-0 bg-y-500" />
               )}
 
-              <div className="px-3 pb-3 pt-1 flex flex-col flex-1">
+              {/* Text content */}
+              <div className="px-3 py-2.5 flex flex-col flex-1 min-w-0 overflow-hidden">
                 <div className="flex items-start justify-between gap-1 mb-0.5">
-                  <h3 className="font-heading font-600 text-sm text-ink leading-snug">{item.name}</h3>
+                  <h3 className="font-heading font-600 text-sm text-ink leading-snug line-clamp-2">{item.name}</h3>
                   <span className="font-heading font-700 text-o-500 text-sm flex-shrink-0 ml-1">{item.price}</span>
                 </div>
-                <p className="font-body text-muted text-xs leading-relaxed flex-1 mb-2">{item.description}</p>
+                <p className="font-body text-muted text-xs leading-relaxed line-clamp-1 mb-1">{item.description}</p>
                 <div className="flex flex-wrap gap-1 mt-auto">
                   {item.badge && (
                     <span className="sticker bg-y-500 text-ink text-xs font-heading font-600 px-2 py-0.5 rounded-full rotate-[-1deg]">{item.badge}</span>

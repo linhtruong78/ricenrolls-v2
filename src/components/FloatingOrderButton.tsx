@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { ShoppingBag, Bike } from "lucide-react";
 
-const CLOVER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-dundas";
+const CLOVER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-hamilton";
 const UBER_EATS_URL = "https://www.ubereats.com/ca/store/rice-n-rolls/kvPWml5jViCdO630ZKftzA";
 
 export default function FloatingOrderButton() {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
-const ORDER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-dundas";
+const ORDER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-hamilton";
 
 export default function Footer() {
   return (
@@ -12,16 +12,16 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">🍱</span>
+              <img src="/images/ricenroll.png" alt="Rice N Rolls logo" className="h-10 w-auto" />
               <span className="font-heading font-bold text-xl">Rice N<span className="text-y-500"> Rolls</span></span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-4">Fresh Korean-inspired food made daily in Hamilton, Ontario. Gimbap, bowls & more!</p>
             <div className="flex gap-2">
-              <a href="https://www.instagram.com/ricenrollsdundas" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/ricenrollsdundas/" target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-y-500 hover:text-ink flex items-center justify-center transition-colors text-sm font-bold border border-white/20">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
-              <a href="https://www.facebook.com/ricenrolls" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.facebook.com/profile.php?id=61561324612315" target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-y-500 hover:text-ink flex items-center justify-center transition-colors border border-white/20">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </a>
@@ -46,7 +46,7 @@ export default function Footer() {
                 <li><span className="text-white/80">Sat</span> 12–7pm</li>
                 <li><span className="text-white/80">Sun</span> 3–7pm</li>
               </ul>
-              <p className="text-y-400 text-xs mt-2">🥢 Lunch: Mon–Fri 11–2pm</p>
+              <p className="text-y-400 text-xs mt-2">🥢 Lunch: Mon–Fri 11–3pm</p>
             </div>
           </div>
 

@@ -38,7 +38,7 @@ export default function HoursReviews() {
               ))}
             </ul>
             <div className="bg-y-500 border-2 border-ink sticker rounded-xl px-3 py-2 text-xs font-body font-700 text-ink mb-4">
-              🥢 Lunch Special: Mon–Fri 11 AM–2 PM
+              🥢 Lunch Special: Mon–Fri 11 AM–3 PM
             </div>
             <div className="space-y-2 text-sm font-body text-muted">
               <div className="flex items-start gap-2"><MapPin size={14} className="mt-0.5 flex-shrink-0 text-o-500"/><span>#3 2 Castlewood Blvd, Hamilton, ON</span></div>

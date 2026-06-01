@@ -45,7 +45,7 @@ const schema = {
     { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "12:00", closes: "19:00" },
     { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "15:00", closes: "19:00" },
   ],
-  sameAs: ["https://www.instagram.com/ricenrollsdundas", "https://www.facebook.com/ricenrolls"],
+  sameAs: ["https://www.instagram.com/ricenrollsdundas/", "https://www.facebook.com/profile.php?id=61561324612315"],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X, ShoppingBag, Bike } from "lucide-react";
 import { getOpenStatus } from "@/lib/hours";
 
-const ORDER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-dundas";
+const ORDER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-hamilton";
 const UBER_EATS_URL = "https://www.ubereats.com/ca/store/rice-n-rolls/kvPWml5jViCdO630ZKftzA";
 const navLinks = [
   { label: "Home", href: "/" },
@@ -32,7 +32,7 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-2xl">🍱</span>
+            <img src="/images/ricenroll.png" alt="Rice N Rolls logo" className="h-10 w-auto" />
             <span className="font-heading font-bold text-xl text-ink leading-none">
               Rice N<span className="text-o-500"> Rolls</span>
             </span>

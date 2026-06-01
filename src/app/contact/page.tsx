@@ -37,7 +37,7 @@ export default function ContactPage() {
                     {hours.map(({ d, t }) => (
                       <div key={d} className="flex gap-4 mb-0.5"><span className="text-muted w-28">{d}</span><span className="font-700 text-ink">{t}</span></div>
                     ))}
-                    <p className="text-o-600 text-xs font-700 mt-1.5">🥢 Lunch Special: Mon–Fri 11AM–2PM (pickup only)</p>
+                    <p className="text-o-600 text-xs font-700 mt-1.5">🥢 Lunch Special: Mon–Fri 11AM–3PM (pickup only)</p>
                   </div>
                 </li>
               </ul>

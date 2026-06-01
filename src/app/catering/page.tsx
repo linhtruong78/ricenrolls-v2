@@ -6,8 +6,9 @@ export const metadata: Metadata = { title: "Catering", description: "Korean-insp
 const packages = [
   { emoji:"🎄", name:"Holiday Special Platter", serves:"8–10 people", price:"$125", hot:false, items:["63 pc rolls (9 varieties)","Japchae noodles","K-pop chicken or crispy tofu","Edamame","Chicken dumplings (6 pcs)"] },
   { emoji:"🎉", name:"Holiday Special Deluxe", serves:"10–12 people", price:"$152", hot:true, items:["72 pc rolls (9 varieties)","Japchae noodles","K-pop chicken or crispy tofu","Edamame","Chicken dumplings (6 pcs)"] },
-  { emoji:"🌯", name:"Rice N Rolls Platter", serves:"3–4 people", price:"$45.99", hot:false, items:["38 pcs total","Original, tuna & bulgogi gimbap","California roll (8 pcs)","Condiments included"] },
-  { emoji:"🌿", name:"Vegan Platter (Medium)", serves:"3–4 people", price:"$42.99", hot:false, items:["38 pcs dairy & egg-free","Cucumber, yam, avocado rolls","Gimbap selections","Vegan sauces"] },
+  { emoji:"🌯", name:"Rolls Platter", serves:"3–4 people", price:"$38.99", hot:false, items:["Choice of 5 roll varieties","Assorted gimbap & rolls","Condiments included","Extra cost on selected rolls"] },
+  { emoji:"🎊", name:"Large Rolls Platter", serves:"5–6 people", price:"$53.99", hot:false, items:["Choice of 7 roll varieties","Assorted gimbap & rolls","Condiments included","Extra cost on selected rolls"] },
+  { emoji:"🌿", name:"Vegan Platter", serves:"3–4 people", price:"$42.99", hot:false, items:["38 pcs dairy & egg-free","Cucumber, yam, avocado rolls","Gimbap selections","Vegan sauces"] },
   { emoji:"🌿", name:"Vegan Platter (Large)", serves:"5–6 people", price:"$69.99", hot:false, items:["56 pcs dairy & egg-free","Wide roll variety","Vegan sauces"] },
 ];
 

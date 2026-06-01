@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ShoppingBag, Bike } from "lucide-react";
 import WaveDivider from "@/components/WaveDivider";
 
-const ORDER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-dundas";
+const ORDER_URL = "https://www.clover.com/online-ordering/rice-n-rolls-hamilton";
 const UBER_EATS_URL = "https://www.ubereats.com/ca/store/rice-n-rolls/kvPWml5jViCdO630ZKftzA";
 
 const floatingItems = [
