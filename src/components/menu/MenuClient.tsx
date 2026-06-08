@@ -58,7 +58,7 @@ export default function MenuClient() {
   }
 
   const current = menuCategories.find(c => c.id === cat)!;
-  const visibleItems = current.items.filter(i => !i.hidden);
+  const visibleItems = current.items.filter(i => !i.hidden).sort((a, b) => (a.comingSoon ? 1 : 0) - (b.comingSoon ? 1 : 0));
   const items = filter === "all" ? visibleItems : visibleItems.filter(i => i.tags.includes(filter as DietaryTag));
 
   return (
@@ -133,10 +133,10 @@ export default function MenuClient() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {items.map(item => (
-            <div key={item.name} className={`comic-card-sm bg-white flex overflow-hidden relative h-[120px] ${item.comingSoon ? "opacity-60" : ""}`}>
+            <div key={item.name} className={`comic-card-sm bg-white flex overflow-hidden relative ${item.comingSoon ? "opacity-60" : ""}`}>
               {/* Food image — fixed width, auto-fills card height via flexbox stretch */}
               {item.image ? (
-                <div className="w-24 sm:w-28 flex-shrink-0 overflow-hidden">
+                <div className="w-24 sm:w-28 h-24 sm:h-28 flex-shrink-0 overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -153,7 +153,7 @@ export default function MenuClient() {
                   <h3 className="font-heading font-600 text-sm text-ink leading-snug line-clamp-2">{item.name}</h3>
                   <span className="font-heading font-700 text-o-500 text-sm flex-shrink-0 ml-1">{item.price}</span>
                 </div>
-                <p className="font-body text-muted text-xs leading-relaxed line-clamp-1 mb-1">{item.description}</p>
+                <p className="font-body text-muted text-xs leading-relaxed mb-1">{item.description}</p>
                 <div className="flex flex-wrap gap-1 mt-auto">
                   {item.badge && (
                     <span className="sticker bg-y-500 text-ink text-xs font-heading font-600 px-2 py-0.5 rounded-full rotate-[-1deg]">{item.badge}</span>
