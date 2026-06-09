@@ -42,6 +42,10 @@ export default function JunePromo() {
           <span className="sticker bg-o-500 text-white text-xs font-heading font-600 px-3 py-1 rounded-full inline-block mb-3 rotate-[-1deg]">June Only 🗓️</span>
           <h2 className="font-heading text-4xl sm:text-5xl font-700 text-ink leading-tight">🎉 June Catering Month</h2>
           <p className="font-body text-ink/70 mt-2 text-base">Book any Party Package and <strong>save up to 9%</strong></p>
+          <div className="inline-flex items-center gap-2 mt-4 bg-white rounded-full px-4 py-2 border-2 border-ink shadow-[3px_3px_0px_0px_#1a1a1a]">
+            <span className="text-lg">🥟</span>
+            <p className="font-body font-700 text-ink text-sm"><strong>FREE 10 Dumplings</strong> with any Medium or Large Party Package</p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -86,10 +90,6 @@ export default function JunePromo() {
               ))}
             </div>
 
-            <div className="bg-o-500 rounded-xl p-3 text-white">
-              <p className="font-heading font-700 text-sm">🥟 Free Dumpling Upgrade!</p>
-              <p className="font-body text-xs mt-0.5 text-white/80">+10 free dumplings on any selected catering order</p>
-            </div>
           </div>
 
         </div>
