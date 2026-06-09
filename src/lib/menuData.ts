@@ -65,7 +65,7 @@ export const menuCategories: MenuCategory[] = [
     { name: "Tteokbokki",                      description: "Rice cake, fish cake with spicy & sweet gochujang sauce",                         price: "$13.99", emoji: "🍢", image: "/images/menu/signature/tteokbokki.jpg",                           tags: ["spicy"] },
     { name: "Egg Rolls",                       description: "Crispy Korean egg rolls",                                                         price: "Soon!",  emoji: "🥚", tags: [],              comingSoon: true },
     // ─ Hidden ─
-    { name: "Veggie Tteokbokki",               description: "Rice cake with spicy & sweet gochujang sauce — vegan",                            price: "$12.99", emoji: "🍢", image: "/staging/ubereats/veggie-tteokbokki.jpg",                    tags: ["vegan","spicy"] },
+    { name: "Veggie Tteokbokki",               description: "Rice cake with spicy & sweet gochujang sauce — vegan",                            price: "$12.99", emoji: "🍢", image: "/images/staging/ubereats/veggie-tteokbokki.jpg",                    tags: ["vegan","spicy"] },
   ]},
 
   // ─── APPETIZERS ──────────────────────────────────────────────────────────────
