@@ -43,7 +43,7 @@ export default function ContactPage() {
               </ul>
             </div>
             <div className="comic-card overflow-hidden h-64 p-0">
-              <iframe title="Rice N Rolls map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2901.0!2d-79.9569!3d43.2636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9b3e5c9e2b4d%3A0x123456789abcdef!2s2%20Castlewood%20Blvd%2C%20Hamilton%2C%20ON%20L9H%207M8!5e0!3m2!1sen!2sca!4v1716000000000" width="100%" height="100%" style={{ border:0, minHeight:"256px" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"/>
+              <iframe title="Rice N Rolls map" src="https://maps.google.com/maps?q=2+Castlewood+Blvd+Hamilton+ON+L9H+7M8&output=embed" width="100%" height="100%" style={{ border:0, minHeight:"256px" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"/>
             </div>
           </div>
 
