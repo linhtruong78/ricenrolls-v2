@@ -10,14 +10,14 @@ const platters = [
     { emoji:"🌯", name:"Large",     serves:"10–15 people", price:"$127.99", details:["15 rolls, your choice","Freshly made","Extra cost on selected rolls"] },
   ]},
   { section:"🥟 Dumpling Platters", items:[
-    { emoji:"🥟", name:"Small",     serves:"3–4 people",   price:"$23.99",  details:["25 pcs mixed dumplings","Chicken & veggie"] },
-    { emoji:"🥟", name:"Medium",    serves:"6–8 people",   price:"$44.99",  details:["50 pcs mixed dumplings","Chicken & veggie"] },
-    { emoji:"🥟", name:"Large",     serves:"10–15 people", price:"$84.99",  details:["100 pcs mixed dumplings","Chicken & veggie"] },
+    { emoji:"🥟", name:"Small",     serves:"3–4 people",   price:"$24.99",  details:["25 pcs mixed dumplings","Chicken & veggie"] },
+    { emoji:"🥟", name:"Medium",    serves:"6–8 people",   price:"$49.99",  details:["50 pcs mixed dumplings","Chicken & veggie"] },
+    { emoji:"🥟", name:"Large",     serves:"10–15 people", price:"$99.99",  details:["100 pcs mixed dumplings","Chicken & veggie"] },
   ]},
   { section:"🍗 Chicken Platters", items:[
-    { emoji:"🍗", name:"Small",     serves:"3–4 people",   price:"$36.99",  details:["30 pcs K-Pop Chicken"] },
-    { emoji:"🍗", name:"Medium",    serves:"6–8 people",   price:"$68.99",  details:["60 pcs K-Pop Chicken"] },
-    { emoji:"🍗", name:"Large",     serves:"10–15 people", price:"$107.99", details:["100 pcs K-Pop Chicken"] },
+    { emoji:"🍗", name:"Small",     serves:"3–4 people",   price:"$41.99",  details:["40 pcs K-Pop Chicken"] },
+    { emoji:"🍗", name:"Medium",    serves:"6–8 people",   price:"$62.99",  details:["60 pcs K-Pop Chicken"] },
+    { emoji:"🍗", name:"Large",     serves:"10–15 people", price:"$103.99", details:["100 pcs K-Pop Chicken"] },
   ]},
   { section:"🍜 Japchae Platters", items:[
     { emoji:"🍜", name:"Half Tray", serves:"~2–3 people",  price:"$35.99",  details:["Glass noodles, carrot, peppers, mushroom","Vegan & GF"] },
@@ -26,9 +26,9 @@ const platters = [
 ];
 
 const partyPackages = [
-  { emoji:"🎉", name:"Small Party",  serves:"10–15 people", price:"$102.99", hot:false, items:["Kimbap Platter Small (5 rolls)","Dumpling Platter Small (25 pcs)","Chicken Platter Small (30 pcs)"] },
-  { emoji:"🎊", name:"Medium Party", serves:"20–30 people", price:"$222.99", hot:true,  items:["Kimbap Platter Medium (10 rolls)","Chicken Platter Medium (60 pcs)","Dumpling Platter Medium (50 pcs)","Japchae Half Tray"] },
-  { emoji:"🥳", name:"Large Party",  serves:"40–60 people", price:"$352.99", hot:false, items:["Kimbap Platter Large (15 rolls)","Chicken Platter Large (100 pcs)","Dumpling Platter Large (100 pcs)","Japchae Full Tray"] },
+  { emoji:"🎉", name:"Small Party",  serves:"10–15 people", price:"$109.99", hot:false, items:["Kimbap Platter Small (5 rolls)","Dumpling Platter Small (25 pcs)","Chicken Platter Small (40 pcs)"] },
+  { emoji:"🎊", name:"Medium Party", serves:"20–30 people", price:"$223.99", hot:true,  items:["Kimbap Platter Medium (10 rolls)","Chicken Platter Medium (60 pcs)","Dumpling Platter Medium (50 pcs)","Japchae Half Tray"] },
+  { emoji:"🥳", name:"Large Party",  serves:"40–60 people", price:"$367.99", hot:false, items:["Kimbap Platter Large (15 rolls)","Chicken Platter Large (100 pcs)","Dumpling Platter Large (100 pcs)","Japchae Full Tray"] },
 ];
 
 export default function CateringPage() {

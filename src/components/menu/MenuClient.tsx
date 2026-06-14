@@ -86,7 +86,7 @@ export default function MenuClient() {
             onScroll={updateArrows}
             className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 select-none flex-1"
           >
-            {menuCategories.map(c => (
+            {menuCategories.filter(c => c.items.some(i => !i.hidden)).map(c => (
               <button key={c.id} onClick={() => { setCat(c.id); setFilter("all"); }}
                 className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-body font-700 transition-all whitespace-nowrap border-2 border-ink ${
                   cat === c.id ? "bg-y-500 text-ink shadow-[3px_3px_0px_0px_#1a1a1a]" : "bg-white text-muted hover:bg-y-100"
