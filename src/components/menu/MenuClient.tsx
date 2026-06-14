@@ -162,6 +162,9 @@ export default function MenuClient() {
                     <span key={t} className={`text-xs font-body font-700 px-2 py-0.5 rounded-full border ${tagStyle[t]}`}>{tagLabel[t]}</span>
                   ))}
                   {item.comingSoon && <span className="text-xs font-body font-700 px-2 py-0.5 rounded-full bg-gray-100 text-muted border border-gray-300">Coming Soon</span>}
+                  {item.upgrade && (
+                    <span className="text-xs font-body font-700 px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-300">🍚 {item.upgrade}</span>
+                  )}
                 </div>
               </div>
             </div>
