@@ -43,8 +43,8 @@ export default function JunePromo() {
           <h2 className="font-heading text-4xl sm:text-5xl font-700 text-ink leading-tight">🎉 June Catering Month</h2>
           <p className="font-body text-ink/70 mt-2 text-base">Book any Party Package and <strong>save up to 9%</strong></p>
           <div className="inline-flex items-center gap-2 mt-4 bg-white rounded-full px-4 py-2 border-2 border-ink shadow-[3px_3px_0px_0px_#1a1a1a]">
-            <span className="text-lg">🥟</span>
-            <p className="font-body font-700 text-ink text-sm"><strong>FREE 10 Dumplings</strong> with any Medium or Large Party Package</p>
+            <span className="text-lg">🥟🍗</span>
+            <p className="font-body font-700 text-ink text-sm"><strong>FREE 10 Dumplings or 10 K-Pop Chicken</strong> with any Medium or Large Party Package</p>
           </div>
         </div>
 
