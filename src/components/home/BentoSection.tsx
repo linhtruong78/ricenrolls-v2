@@ -10,7 +10,7 @@ const pillars = [
 const dishes = [
   { emoji: "🌯", name: "Beef Bulgogi Gimbap", price: "$11.99", badge: "⭐ Best Seller", bg: "bg-y-100" },
   { emoji: "🍗", name: "K-Pop Chicken", price: "$13.99", badge: "🔥 Fan Fave", bg: "bg-o-100" },
-  { emoji: "🥣", name: "Bulgogi Cupbap", price: "$14.99", badge: "❤️ Fan Fave", bg: "bg-y-100" },
+  { emoji: "🍚", name: "Bulgogi Cupbap", price: "$14.99", badge: "❤️ Fan Fave", bg: "bg-y-100" },
   { emoji: "🍱", name: "Korean Doshirak Set", price: "$15.99", badge: "💰 Best Value", bg: "bg-o-100" },
 ];
 
