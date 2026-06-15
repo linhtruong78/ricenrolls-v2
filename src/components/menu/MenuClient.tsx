@@ -127,6 +127,20 @@ export default function MenuClient() {
         </div>
       </div>
 
+      {/* Doshirak spotlight banner */}
+      {cat === "doshirak" && (
+        <div className="comic-card bg-o-500 p-5 mb-5 flex flex-col sm:flex-row items-center gap-4">
+          <span className="text-5xl">🍱</span>
+          <div className="flex-1 text-center sm:text-left">
+            <div className="flex items-center gap-2 justify-center sm:justify-start mb-1">
+              <span className="sticker bg-y-500 text-ink text-xs font-heading font-600 px-2.5 py-0.5 rounded-full rotate-[-1deg]">🏆 Best Value on the Menu</span>
+            </div>
+            <h3 className="font-heading font-700 text-xl text-white">Complete Korean Set Meals</h3>
+            <p className="font-body text-white/80 text-sm mt-0.5">Protein + rice + all the sides — everything in one box. Nothing missing. From $15.99.</p>
+          </div>
+        </div>
+      )}
+
       {/* Items grid */}
       {items.length === 0 ? (
         <div className="text-center py-16"><p className="text-4xl mb-3">🔍</p><p className="font-body text-muted">No items match that filter here!</p></div>
