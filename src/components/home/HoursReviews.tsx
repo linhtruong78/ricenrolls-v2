@@ -1,10 +1,8 @@
 import { MapPin, Phone, Clock } from "lucide-react";
 
 const hours = [
-  { d: "Mon – Thu", t: "11:00 AM – 7:00 PM" },
-  { d: "Friday",    t: "11:00 AM – 8:00 PM" },
-  { d: "Saturday",  t: "12:00 PM – 7:00 PM" },
-  { d: "Sunday",    t: "3:00 PM – 7:00 PM" },
+  { d: "Mon – Sat", t: "12:00 PM – 8:00 PM" },
+  { d: "Sunday",    t: "Closed" },
 ];
 
 const reviews = [
