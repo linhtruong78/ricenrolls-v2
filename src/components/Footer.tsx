@@ -44,7 +44,7 @@ export default function Footer() {
                 <li><span className="text-white/80">Mon–Sat</span> 12–8pm</li>
                 <li><span className="text-white/80">Sun</span> Closed</li>
               </ul>
-              <p className="text-y-400 text-xs mt-2">🥢 Lunch: Mon–Fri 11–3pm</p>
+              <p className="text-y-400 text-xs mt-2">🥢 Lunch: Mon–Fri 12–3pm</p>
             </div>
           </div>
 
