@@ -13,6 +13,14 @@ const tagStyle: Record<DietaryTag, string> = {
 const tagLabel: Record<DietaryTag, string> = { vegan: "🌿 Vegan", gf: "🌾 GF", spicy: "🌶️ Spicy" };
 type Filter = DietaryTag | "all";
 
+const PLATTER_DISCOUNT = 5;
+function discountedPrice(price: string, amount: number): string | null {
+  const match = price.match(/^\$(\d+(?:\.\d{2})?)$/);
+  if (!match) return null;
+  const value = parseFloat(match[1]) - amount;
+  return value > 0 ? `$${value.toFixed(2)}` : null;
+}
+
 export default function MenuClient() {
   const searchParams = useSearchParams();
   const initialCat = searchParams.get("cat") ?? "rice-bowl";
@@ -165,7 +173,14 @@ export default function MenuClient() {
               <div className="px-3 py-2.5 flex flex-col flex-1 min-w-0 overflow-hidden">
                 <div className="flex items-start justify-between gap-1 mb-0.5">
                   <h3 className="font-heading font-600 text-sm text-ink leading-snug line-clamp-2">{item.name}</h3>
-                  <span className="font-heading font-700 text-o-500 text-sm flex-shrink-0 ml-1">{item.price}</span>
+                  {cat === "platters" && !item.comingSoon && discountedPrice(item.price, PLATTER_DISCOUNT) ? (
+                    <span className="flex items-baseline gap-1 flex-shrink-0 ml-1">
+                      <span className="text-muted text-xs line-through">{item.price}</span>
+                      <span className="font-heading font-700 text-red-600 text-sm">{discountedPrice(item.price, PLATTER_DISCOUNT)}</span>
+                    </span>
+                  ) : (
+                    <span className="font-heading font-700 text-o-500 text-sm flex-shrink-0 ml-1">{item.price}</span>
+                  )}
                 </div>
                 <p className="font-body text-muted text-xs leading-relaxed mb-1">{item.description}</p>
                 <div className="flex flex-wrap gap-1 mt-auto">
