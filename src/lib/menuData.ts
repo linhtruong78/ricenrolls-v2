@@ -6,6 +6,12 @@ export const menuCategories: MenuCategory[] = [
 
   // ─── PLATTERS ────────────────────────────────────────────────────────────────
   { id: "platters", label: "Platters", emoji: "🎊", subtitle: "Great for groups! Order 24 hrs in advance.", items: [
+    // ─ Roll Combo Platters ─
+    { name: "Meat Lovers",                     description: "Bulgogi Gimbap, Spicy Pork Gimbap, Crispy Chicken Gimbap x2, Original Gimbap",                           price: "$49.99",  emoji: "🌯", tags: [],             badge: "🍽️ Catering" },
+    { name: "Family Favorite",                 description: "Original Gimbap x2, Bulgogi Gimbap, Crispy Chicken Gimbap, Creamy Tuna Mayo Gimbap",                     price: "$48.99",  emoji: "🌯", tags: [],             badge: "🍽️ Catering" },
+    { name: "Veggie Crunch",                   description: "Vegan Roll, Crispy Yam Roll, Avocado Roll, Yam Roll, Cucumber Roll",                                     price: "$39.99",  emoji: "🌯", tags: ["vegan"],      badge: "🍽️ Catering" },
+    { name: "Opposites Attract",               description: "Bulgogi Gimbap, Crispy Chicken Gimbap, Vegan Roll, Crispy Yam Roll, Avocado Roll",                       price: "$44.99",  emoji: "🌯", tags: [],             badge: "🍽️ Catering" },
+    { name: "Surf & Seoul",                    description: "Shrimp Tempura Roll x2, Bulgogi Gimbap, Crispy Chicken Gimbap, Creamy Tuna Mayo Gimbap",                 price: "$50.99",  emoji: "🌯", tags: [],             badge: "🍽️ Catering" },
     // ─ Kimbap Platters ─
     { name: "Kimbap Platter — Small",          description: "5 rolls, your choice — freshly made. Serves 3–4. Extra cost on selected rolls.",                        price: "$47.99",  emoji: "🌯", image: "/images/menu/platters/rnr-platter.jpg",            tags: [],             badge: "🍽️ Catering" },
     { name: "Kimbap Platter — Medium",         description: "10 rolls, your choice — freshly made. Serves 6–8. Extra cost on selected rolls.",                       price: "$89.99",  emoji: "🌯", image: "/images/menu/platters/32pcs-platter.png",          tags: [],             badge: "🍽️ Catering" },
@@ -25,12 +31,6 @@ export const menuCategories: MenuCategory[] = [
     { name: "Party Package — Small",           description: "For 10–15 people: Kimbap Platter S (5 rolls) + Dumpling Platter S (25 pcs) + Chicken Platter S (40 pcs)", price: "$109.99", emoji: "🎉", image: "/images/menu/platters/catering-pizza-box.png", tags: [], badge: "🎊 Party Deal" },
     { name: "Party Package — Medium",          description: "For 20–30 people: Kimbap Platter M (10 rolls) + Chicken Platter M (60 pcs) + Dumpling Platter M (50 pcs) + Japchae Half Tray", price: "$223.99", emoji: "🎉", image: "/images/menu/platters/catering-pizza-box.png", tags: [], badge: "🎊 Party Deal" },
     { name: "Party Package — Large",           description: "For 40–60 people: Kimbap Platter L (15 rolls) + Chicken Platter L (100 pcs) + Dumpling Platter L (100 pcs) + Japchae Full Tray", price: "$367.99", emoji: "🎉", image: "/images/menu/platters/catering-pizza-box.png", tags: [], badge: "🎊 Party Deal" },
-    // ─ Roll Combo Platters ─
-    { name: "Meat Lovers",                     description: "Bulgogi Gimbap, Spicy Pork Gimbap, Crispy Chicken Gimbap x2, Original Gimbap",                           price: "$49.99",  emoji: "🌯", tags: [],             badge: "🍽️ Catering" },
-    { name: "Family Favorite",                 description: "Original Gimbap x2, Bulgogi Gimbap, Crispy Chicken Gimbap, Creamy Tuna Mayo Gimbap",                     price: "$53.99",  emoji: "🌯", tags: [],             badge: "🍽️ Catering" },
-    { name: "Veggie Crunch",                   description: "Vegan Roll, Crispy Yam Roll, Avocado Roll, Yam Roll, Cucumber Roll",                                     price: "$43.99",  emoji: "🌯", tags: ["vegan"],      badge: "🍽️ Catering" },
-    { name: "Opposites Attract",               description: "Bulgogi Gimbap, Crispy Chicken Gimbap, Vegan Roll, Crispy Yam Roll, Avocado Roll",                       price: "$49.99",  emoji: "🌯", tags: [],             badge: "🍽️ Catering" },
-    { name: "Surf & Seoul",                    description: "Shrimp Tempura Roll x2, Bulgogi Gimbap, Crispy Chicken Gimbap, Creamy Tuna Mayo Gimbap",                 price: "$56.99",  emoji: "🌯", tags: [],             badge: "🍽️ Catering" },
     // ─ Hidden ─
     { name: "Rolls Platter",                   description: "Choice of 5 kinds of rolls — serves 3–4. Extra cost on selected rolls.",                                price: "$38.99",  emoji: "🎊", image: "/images/menu/platters/rnr-platter.jpg",            tags: [], badge: "🍽️ Catering",    hidden: true },
     { name: "Large Rolls Platter",             description: "Choice of 7 kinds of rolls — serves 5–6. Extra cost on selected rolls.",                                price: "$53.99",  emoji: "🎊", image: "/images/menu/platters/large-rolls-platter.jpg",    tags: [], badge: "🍽️ Catering",    hidden: true },

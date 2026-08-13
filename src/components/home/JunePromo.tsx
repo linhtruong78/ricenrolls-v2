@@ -38,8 +38,8 @@ export default function JunePromo() {
               <div className="inline-block bg-o-500 text-white font-heading font-700 text-2xl px-4 py-1 rounded-xl border-2 border-ink mb-3 shadow-[3px_3px_0px_0px_#1a1a1a]">
                 $5 OFF
               </div>
-              <h3 className="font-heading font-700 text-xl text-ink leading-tight">All Platters</h3>
-              <p className="font-body text-muted text-xs mt-1 leading-relaxed">Any Kimbap, Dumpling, Chicken, Japchae, Party Package or Roll Combo Platter</p>
+              <h3 className="font-heading font-700 text-xl text-ink leading-tight">Selected Platters</h3>
+              <p className="font-body text-muted text-xs mt-1 leading-relaxed">Meat Lovers, Family Favorite, Veggie Crunch, Opposites Attract & Surf &amp; Seoul</p>
             </div>
           </div>
           <a href="/menu?cat=platters" className="mt-5 inline-block w-full text-center bg-o-500 text-white font-heading font-700 text-sm px-5 py-2.5 rounded-full border-2 border-ink shadow-[3px_3px_0px_0px_#1a1a1a] hover:translate-y-[-1px] transition-transform">
