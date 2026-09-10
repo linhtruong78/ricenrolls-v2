@@ -40,7 +40,7 @@ const schema = {
   telephone: "+12892388868", email: "contact@ricenrolls.ca", url: "https://www.ricenrolls.ca",
   servesCuisine: ["Korean", "Asian Fusion"], priceRange: "$$",
   openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], opens: "12:00", closes: "20:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens: "11:00", closes: "19:30" },
   ],
   sameAs: ["https://www.instagram.com/ricenrollsdundas/", "https://www.facebook.com/profile.php?id=61561324612315"],
 };
